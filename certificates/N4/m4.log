@@ -1,0 +1,58 @@
+
+--------------- INPUT DATA ---------------
+#variables                      32
+#equations                      51
+#invalid equations               0
+field characteristic    1073741827
+homogeneous input?               0
+signature-based computation      0
+monomial order                 DRL
+basis hash table resetting     OFF
+linear algebra option            2
+initial hash table size     131072 (2^17)
+max pair selection             ALL
+reduce gb                        1
+#threads                         4
+info level                       1
+generate pbm files               0
+------------------------------------------
+Dimension of quotient: 684
+[684, 429], Non trivial / Trivial = 62.72%
+Density of non-trivial part 49.90%
+Time spent to generate sequence (elapsed): 0.26 sec (1.55 Gops/sec)
+Time spent to compute eliminating polynomial (elapsed): 0.01 sec
+Elimination polynomial has degree 684.
+Time for rational param:       1431.13 (elapsed) sec / 1877.51 sec (cpu)
+
+------------------------------------------------------------------------------------
+msolve overall time        1431.13 sec (elapsed) / 1877.51 sec (cpu)
+------------------------------------------------------------------------------------
+
+---------------- TIMINGS ---------------
+overall(elapsed)     1430.65 sec
+overall(cpu)         1876.77 sec
+select                 18.97 sec   1.3%
+symbolic prep.         13.11 sec   0.9%
+update                985.25 sec  68.9%
+convert                 1.41 sec   0.1%
+linear algebra        411.49 sec  28.8%
+reduce gb               0.00 sec   0.0%
+-----------------------------------------
+
+---------- COMPUTATIONAL DATA -----------
+size of basis                  4089
+#terms in basis             1387250
+#pairs reduced               138598
+#GM criterion             258108303
+#redundant elements           18638
+#rows reduced                287569
+#zero reductions             119064
+max. matrix data             293010 x 276097 (0.168%)
+max. symbolic hash table size  2^19
+max. basis hash table size     2^26
+-----------------------------------------
+
+
+real	23m51.399s
+user	31m7.334s
+sys	0m10.392s
