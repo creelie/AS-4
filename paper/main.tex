@@ -5,6 +5,8 @@
 \usepackage[section]{placeins}
 \usepackage[hidelinks]{hyperref}
 \usepackage[expansion=false]{microtype}
+\usepackage{enumitem}
+\setlist[enumerate,1]{label=(\roman*)}
 
 \newtheorem{theorem}{Theorem}[section]
 \newtheorem{proposition}[theorem]{Proposition}
@@ -28,7 +30,6 @@
 \newcommand{\cW}{\mathcal W}
 \newcommand{\GL}{\mathrm{GL}}
 \newcommand{\PG}{\mathrm{P}G}
-\newcommand{\NTHREEUPPER}{[UPPER]}
 \newcommand{\zenodoDOI}{10.5281/zenodo.XXXXXXXX}
 
 \setlength{\emergencystretch}{2.5em}
@@ -36,7 +37,7 @@
 \raggedbottom
 \begin{document}
 
-\title[Zero angular momentum of D-brane microstates]{Black Hole Microstates of Two and Three\\ D6-Branes Carry No Angular Momentum}
+\title[Zero angular momentum of D-brane microstates]{Black Hole Microstates of Two D6-Branes\\ Carry No Angular Momentum}
 
 \author{Deep Bhattacharjee}
 \address{Formerly, Electro-Gravitational Space Propulsion Laboratory (EGSPL), Bhubaneswar, Odisha 751030, India}
@@ -47,10 +48,11 @@
 \urladdr{https://orcid.org/0000-0003-0466-750X}
 
 \begin{abstract}
-For the D2-D2-D2-D6 system on $T^6$ with any number of D6-branes, every classical supersymmetric vacuum is a simple quiver representation; the vacua are therefore the critical points of one function on a smooth space, and they come in pairs. With one D6-brane they are exactly $12$ isolated points for generic moduli, and with two and three D6-branes exactly $56$ and $208$ isolated points at explicit moduli, as Sen's zero angular momentum conjecture predicts.
+For the D2-D2-D2-D6 system on $T^6$ with any number of D6-branes, every classical supersymmetric vacuum is a simple quiver representation, so the vacua are the critical points of one function on a smooth space, and they come in pairs. With one D6-brane they are exactly $12$ isolated points for generic moduli, and with two exactly $56$ isolated points at explicit moduli, as Sen's zero angular momentum conjecture predicts. With three D6-branes we find all $208$ predicted vacua, each isolated.
 \end{abstract}
 
 \maketitle
+\enlargethispage{4pt}
 
 \noindent\textbf{Keywords:} black hole microstates; quiver quantum mechanics; zero angular momentum.
 
@@ -66,9 +68,9 @@ The strong form can be tested in type~II string theory on $T^6$. There, for the 
 \end{equation}
 where $\hat c(4N)$ is the coefficient of $q^Ny^0$ in $-\vartheta_1(z|\tau)^2/\eta(\tau)^6$ (Appendix~\ref{app:prediction}).
 
-In \cite{CGMS14} the vacua were found for $N=1$, and in \cite{CGMS16} for $N=2$ and $N=3$: $12$, $56$ and $208$ isolated solutions of the $F$-term equations in a fixed gauge, at random rational values of the parameters, with Hilbert series computed in Singular and Macaulay2 and numerical solutions as a check; configurations where the gauge choice fails were examined separately and gave no solutions. For $N=2$ the $D$-term equations and the gauge field potential were then analysed solution by solution. For $N=3$ the authors state that they did not check explicitly that each solution of the $F$-term equations carries a unique solution of the $D$-term equations, and expected it on general grounds \cite[Section~5]{CGMS16}. No case beyond $N=3$ has been computed.
+In \cite{CGMS14} the vacua were found for $N=1$, and in \cite{CGMS16} for $N=2$ and $N=3$: $12$, $56$ and $208$ isolated solutions of the $F$-term equations in a fixed gauge, at random rational values of the parameters, with Hilbert series computed in Singular and Macaulay2 and numerical solutions as a check; configurations where the gauge choice fails were examined separately and gave no solutions. For $N=2$ the $D$-term equations and the gauge field potential were then analysed solution by solution. For $N=3$ the authors state that they did not check explicitly that each solution of the $F$-term equations carries a unique solution of the $D$-term equations, and expected it on general grounds \cite[Section~5]{CGMS16}. Chowdhury and Maji returned to these equations with numerical algebraic geometry: they recovered $12$, $56$, $208$ by homotopy continuation and Hilbert series, found $684$ for $N=4$, checked the $D$-term equations numerically for $N\le4$ \cite{CM24}, and found $2032$ and $5616$ for $N=5,6$ by monodromy \cite{CM26}. These counts agree with \eqref{eq:prediction}, but they are numerical, and none of these works proves that the vacua are isolated or that their number is the predicted one.
 
-In this paper we settle the structure for every $N$ and the counts for $N\le 3$. Let $\cM_c$ be the space of vacua, at values $c$ of the parameters of the superpotential, modulo gauge transformations and modulo the flat directions of the centre of mass. Write $\cR^{\rm s}$ for the space of simple representations of the quiver, $\PG$ for the gauge group modulo its centre and $f_c$ for the function induced by the superpotential on the smooth variety $\cR^{\rm s}/\PG$.
+In this paper we settle the structure for every $N$ and the counts for $N\le 2$, and for $N=3$ we exhibit the predicted number of isolated vacua. Let $\cM_c$ be the space of vacua, at values $c$ of the parameters of the superpotential, modulo gauge transformations and modulo the flat directions of the centre of mass. Write $\cR^{\rm s}$ for the space of simple representations of the quiver, $\PG$ for the gauge group modulo its centre and $f_c$ for the function induced by the superpotential on the smooth variety $\cR^{\rm s}/\PG$.
 
 \begin{mainthm}\label{thm:A}
 Let $N\ge1$ and let the parameters $c^{(k\ell)}$ of the superpotential be nonzero. Every solution of the $F$-term equations is a simple representation of the quiver. Consequently, for every value of the Fayet--Iliopoulos parameters:
@@ -85,12 +87,13 @@ Part~(iv) explains why every number in \eqref{eq:prediction} is even. Part~(iii)
 \begin{mainthm}\label{thm:B}
 \begin{enumerate}
 \item For $N=1$ and all values of $c$ outside a proper Zariski-closed subset, $\cM_c$ consists of exactly $12$ points.
-\item For $N=2$ and $N=3$ there are explicit rational parameters $c_0$ (Table~\ref{tab:c0}) at which $\cM_{c_0}$ consists of exactly $56$, respectively $208$, points, each a nondegenerate critical point of $f_{c_0}$. The count is exact: no vacuum is lost to the choice of gauge.
+\item For $N=2$ there are explicit rational parameters $c_0$ (Table~\ref{tab:c0}) at which $\cM_{c_0}$ consists of exactly $56$ points, each a nondegenerate critical point of $f_{c_0}$. The count is exact: no vacuum is lost to the choice of gauge.
+\item For $N=3$ and the same $c_0$, $\cM_{c_0}$ contains $208$ distinct vacua, each an isolated and nondegenerate critical point of $f_{c_0}$.
 \item For $N=2,3$ and every $c$ close to $c_0$, $\cM_c$ contains at least $56$, respectively $208$, nondegenerate vacua, and the same lower bound holds for all $c$ outside a proper Zariski-closed subset.
 \end{enumerate}
 \end{mainthm}
 
-In each case the vacua are isolated, so $P(y)$ is a constant and all BPS states have $J_3=0$: the strong zero angular momentum conjecture holds at these parameters, with the counts \eqref{eq:prediction}. Theorem~\ref{thm:A}(i) supplies the step that was left open for $N=3$ in \cite{CGMS16}, and does so for every $N$. The statement for $N=2,3$ at $c_0$ is a theorem: the number of solutions of the gauge-fixed equations is computed with exact rational arithmetic, it is matched by an explicit list of algebraic solutions, each of which is checked to satisfy every equation identically, and the configurations excluded by the gauge choice are shown to contain no solution.\footnote{All computations are exact over $\QQ$; no floating point number enters a proof. The programs are archived at \cite{Bha26}.} For $N=4$ we find exactly $684=-\hat c(16)$ vacua in a gauge slice modulo a large prime (Section~\ref{ssec:N4}); this is not a proof.
+For $N=1$ and $N=2$ the vacua are isolated, so $P(y)$ is a constant and all BPS states have $J_3=0$: the strong zero angular momentum conjecture holds at these parameters, with the counts \eqref{eq:prediction}. For $N=3$ the $208$ vacua of part~(iii) are isolated, their number is the index $-\hat c(12)$, and they carry $J_3=0$; what we cannot prove is that no further vacuum exists at $c_0$. We show that a further vacuum would need coordinates with the primes $10^9+7$ and $2^{30}+3$ in their denominators (Proposition~\ref{prop:integral}). Theorem~\ref{thm:A}(i) supplies the step that was left open for $N=3$ in \cite{CGMS16} and checked numerically in \cite{CM24}, and does so for every $N$. The statement for $N=2$ at $c_0$ is a theorem: the number of solutions of the gauge-fixed equations is computed with exact rational arithmetic, it is matched by an explicit list of algebraic solutions, each of which is checked to satisfy every equation identically, and the configurations excluded by the gauge choice are shown to contain no solution.\footnote{The computations behind Theorem~\ref{thm:B} are exact; no floating point number enters a proof. The programs are archived at \cite{Bha26}.} For $N=4$ we find exactly $684=-\hat c(16)$ vacua in a gauge slice modulo a large prime (Section~\ref{ssec:N4}); this is not a proof.
 
 \begin{figure}[t]
 \centering
@@ -101,7 +104,7 @@ In each case the vacua are isolated, so $P(y)$ is a constant and all BPS states 
 
 The proof of Theorem~\ref{thm:A} is short. The $F$-term equations for the adjoint fields say that the products of the bifundamentals around each edge are nonzero constants, and that on the $U(N)$ node the commutators of the adjoints are $-c^{(k4)}$ times the identity modulo a rank one matrix. A proper subrepresentation would make the commutator equation hold on a nonzero quotient or subspace with the rank one term removed, and taking the trace there gives $-c^{(k4)}$ times its dimension equal to zero. Simplicity then gives the $D$-terms by King's theorem \cite{Kin94}, the gauge fields by Schur's lemma, and the pairing by the oddness of the superpotential.
 
-Theorem~\ref{thm:B} rests on a gauge slice that is valid at every simple representation where certain rows are independent, on exact elimination for the slice equations, and on separate exact computations showing that the configurations where these rows are dependent carry no vacua. The rational univariate representation of the solutions \cite{Rou99} gives a certificate that can be checked independently of the program that produced it.
+Theorem~\ref{thm:B} rests on a gauge slice that is valid at every simple representation where certain rows are independent, on exact elimination for the slice equations, and, for $N=2$, on separate exact computations showing that the configurations where these rows are dependent carry no vacua. The rational univariate representation of the solutions \cite{Rou99} gives a certificate that can be checked independently of the program that produced it, and a second certificate, a determinant prime to the eliminating polynomial, shows that every solution found is nonsingular.
 
 The paper is organised as follows. Section~\ref{sec:system} recalls the quantum mechanics and states the conjecture precisely. Section~\ref{sec:simple} proves Theorem~\ref{thm:A}. Section~\ref{sec:slices} constructs the gauge slices and proves that they miss no vacuum. Section~\ref{sec:counts} proves Theorem~\ref{thm:B}. Section~\ref{sec:discussion} discusses what remains open. Appendix~\ref{app:fterms} lists all $F$-term equations, Appendix~\ref{app:prediction} derives \eqref{eq:prediction}, and Appendix~\ref{app:cert} describes the certificates and the data.
 
@@ -281,7 +284,7 @@ For $N\le3$ the complement of $\cR^\circ_N$ in the set of vacua consists of the 
 \item $N=2$: $r_1$ and $r_2$ are dependent and nonzero, so after a change of basis $r_1=(1,0)$ and $r_2=\lambda(1,0)$ with $\lambda\in\CC$. We impose the shift and torus gauge and these two conditions; $\lambda$ and $r_3$ are free variables.
 \item $N=3$: by Lemma~\ref{lem:notproportional} the rows span a plane $P$. Some two of them, $r_a,r_b$ with $a<b$, form a basis of $P$; after a change of basis $r_a=e_1$, $r_b=e_2$, and the third row $r_c$ lies in $\operatorname{span}(e_1,e_2)$. The matrices $g$ with $e_1g=e_1$ and $e_2g=e_2$ preserve these conditions. By Lemma~\ref{lem:rowspan} the plane $P$ is not invariant under the $\Phi^{(4)}_j$, and $e_1\Phi^{(4)}_a=r_a\Phi^{(4)}_a$ and $e_2\Phi^{(4)}_b=r_b\Phi^{(4)}_b$ lie in $P$; hence one of the four vectors $e_1\Phi^{(4)}_j$ ($j\ne a$) and $e_2\Phi^{(4)}_j$ ($j\ne b$) has a nonzero third coordinate, and a unique such $g$ makes that vector equal to $e_3$. This gives four charts for each of the three pairs $(a,b)=(1,2),(1,3),(2,3)$, twelve in all, each with all of the gauge freedom fixed.
 \end{itemize}
-Every vacuum outside $\cR^\circ_N$ lies in one of these charts, so it is enough to show that the charts contain no solution of the $F$-term equations.
+Every vacuum outside $\cR^\circ_N$ lies in one of these charts. For $N=2$ we show in Section~\ref{sec:counts} that the chart contains no solution of the $F$-term equations; for $N=3$ we can show this for the twelve charts only modulo primes (Section~\ref{ssec:N3}).
 
 \section{Exact counts}\label{sec:counts}
 
@@ -298,19 +301,33 @@ For $N=1$ the commutator term $\cW_4$ vanishes and $\Sigma_1$ covers all vacua. 
 \subsection{\texorpdfstring{$N=2$}{N=2}}
 At $c=c_0$ the slice $\Sigma_2$ has $27$ variables and $39$ equations; the linear elimination leaves $15$ variables and $21$ equations. A Gröbner basis of this ideal over $\QQ$, computed with the standard basis algorithm of Singular \cite{GP08} in exact rational arithmetic, gives $\dim_\QQ\QQ[x]/I=56$. A rational univariate representation of the $27$-variable system with $\deg\chi=56$ was computed with msolve \cite{BES21}; $\chi$ is squarefree and all $39$ equations vanish modulo $\chi$. So $V(I)$ consists of exactly $56$ points and $I$ is radical. The exceptional chart $r_2=\lambda r_1$ gives an ideal whose reduced Gröbner basis over $\QQ$ is $\{1\}$, so it contains no solution. Hence $\cM_{c_0}$ has exactly $56$ points.
 
-\subsection{\texorpdfstring{$N=3$}{N=3}}
-At $c=c_0$ the slice $\Sigma_3$ has $43$ variables; after the linear elimination there remain $21$ variables and $32$ equations. A rational univariate representation with $\deg\chi=208$ was computed with msolve over $\QQ$; $\chi$ is squarefree, and every equation vanishes modulo $\chi$, which we checked independently with exact arithmetic in FLINT. So the slice carries at least $208$ distinct solutions. \NTHREEUPPER\ The four exceptional strata (rank two with $(a,b)=(1,2),(1,3),(2,3)$, and rank one) have reduced Gröbner basis $\{1\}$ over $\QQ$. Hence $\cM_{c_0}$ has exactly $208$ points.
+\subsection{\texorpdfstring{$N=3$}{N=3}}\label{ssec:N3}
+At $c=c_0$ the slice $\Sigma_3$ has $43$ variables; after the linear elimination there remain $21$ variables and $32$ equations. A rational univariate representation with $\deg\chi=208$ was computed with msolve over $\QQ$; $\chi$ is squarefree, and every equation vanishes modulo $\chi$, which we checked independently with exact arithmetic in FLINT. So the slice carries at least $208$ distinct solutions.
+
+Each of these solutions is nonsingular. Let $J$ be the $32\times21$ Jacobian matrix of the reduced system, evaluated at $x=\rho(t)$, and let $R$ be a fixed $21\times32$ matrix of integers. Put $D(t)=\det(RJ)$, reduced modulo $\chi$. If $\gcd(D,\chi)=1$, then $D(\theta)\ne0$ at every root $\theta$ of $\chi$, so $J$ has rank $21$ at every solution. We check this modulo the prime $p=2^{61}-1$: there the leading coefficient of $\chi$ and the denominators of the representation are units, $\chi$ stays squarefree, and the reductions of $D$ and $\chi$ are coprime. If $D(\theta)=0$ for a root $\theta$ of $\chi$, then $\theta$ and the coefficients of $D$ are integral at every prime above $p$, and reducing modulo such a prime would give a common root of the reductions of $D$ and $\chi$, which do not have one. So $D(\theta)\ne0$ for every root.\footnote{Working modulo a prime loses nothing here, because the statement to be proved is that something does not vanish. An upper bound on the number of solutions would need the opposite implication, from the absence of solutions modulo $p$ to their absence over $\QQ$, which fails in general; this is the difficulty discussed below.} A solution at which the Jacobian has full rank is an isolated point of multiplicity one. This proves Theorem~\ref{thm:B}(iii), using Lemma~\ref{lem:slice} to pass from the slice to $\cM_{c_0}$.
+
+We have not been able to show over $\QQ$ that there are no further solutions, in the slice or in the twelve exceptional charts. The standard basis algorithm, which settles $N=2$ in half a minute, did not finish for $N=3$ within two hours and $7$ GB of memory. Modulo primes the computations are fast: the Gröbner basis of the reduced system has $\dim_{\mathbb F_p}\mathbb F_p[x]/I_p=208$ for $p=10^9+7$ and $p=2^{30}+3$, and every exceptional chart has reduced Gröbner basis $\{1\}$ modulo $65521$, $10^9+7$ and $2^{30}+3$. These counts give the following partial upper bound.
+
+\begin{proposition}\label{prop:integral}
+Let $p\in\{10^9+7,\,2^{30}+3\}$ and let $\mathfrak p$ be a prime ideal above $p$ in a number field $K$. Every solution of the reduced $N=3$ slice equations at $c_0$ with coordinates in $K$ that are integral at $\mathfrak p$ is one of the $208$ solutions above, and no exceptional chart has a solution with coordinates integral at $\mathfrak p$.
+\end{proposition}
+
+\begin{proof}
+Let $\mathcal O$ be the completion of the ring of integers of $K$ at $\mathfrak p$, with residue field $k$, and let $\bar a$ denote reduction modulo $\mathfrak p$. The equations have coefficients that are integral at $p$. For a chart, a solution $a\in\mathcal O^n$ would reduce to a solution over $k$ of equations that generate the unit ideal over $\mathbb F_p$, which is impossible. For the slice, the leading coefficient of $\chi$, the denominators of the $\rho_i$ and the values of the denominator polynomial at the roots of $\chi$ are units at $p$, by the checks above at $p$, so each of the $208$ solutions $b$ lies in $\mathcal O'^n$ for a finite extension $\mathcal O'$ of $\mathcal O$, and their reductions are $208$ distinct solutions over $\bar k$, because $\chi$ stays squarefree modulo $p$. Since $\dim_{\mathbb F_p}\mathbb F_p[x]/I_p=208$, these are all the solutions over $\bar k$, each of multiplicity one, so the Jacobian matrix has rank $21$ at each of them (which we also checked directly). Now let $a\in\mathcal O^n$ be a solution and enlarge $\mathcal O$ so that it contains the coordinates of all the $b$. Then $\bar a=\bar b$ for one of them. Write $f$ for the vector of equations. Taylor expansion gives $0=f(a)-f(b)=J(b)(a-b)+q(a-b)$, where every entry of $q(a-b)$ is a combination with coefficients in $\mathcal O$ of products of two coordinates of $a-b$. Some $21\times21$ minor of $J(b)$ is a unit, so $\|a-b\|\le\|a-b\|^2$ in the $\mathfrak p$-adic norm. Since $\|a-b\|<1$, this forces $a=b$.
+\end{proof}
+
+So every vacuum at $c_0$ other than the $208$ would have, in the coordinates of the reduced system of the slice or of some chart, coordinates with both $10^9+7$ and $2^{30}+3$ in their denominators. We regard this, together with the agreement of $208$ with $-\hat c(12)$, as strong evidence that the $208$ vacua are all of $\cM_{c_0}$, but it is not a proof.
 
 \subsection{\texorpdfstring{$N=4$}{N=4}: a count modulo a prime}\label{ssec:N4}
-For $N=4$ the slice $\Sigma_4$ has $63$ variables and the linear elimination leaves $32$. A Gröbner basis over $\QQ$ is beyond our means, but modulo the prime $p=2^{30}+3$ msolve computes a Gröbner basis of the reduced system, $4089$ polynomials with about $1.4$ million terms, and a rational univariate representation over $\mathbb F_p$ whose eliminating polynomial has degree $684$. We checked with FLINT that this polynomial is squarefree over $\mathbb F_p$ and that all $51$ equations of the reduced system vanish on the parametrisation modulo the eliminating polynomial. So modulo $p$ the standard slice carries exactly $684$ solutions, which is $-\hat c(16)$.
+For $N=4$ the slice $\Sigma_4$ has $63$ variables and the linear elimination leaves $32$. A Gröbner basis over $\QQ$ is beyond our means, but modulo the prime $p=2^{30}+3$ msolve computes a Gröbner basis of the reduced system, $4089$ polynomials with about $1.4$ million terms, and a rational univariate representation over $\mathbb F_p$ whose eliminating polynomial has degree $684$. We checked with FLINT that this polynomial is squarefree over $\mathbb F_p$ and that all $51$ equations of the reduced system vanish on the parametrisation modulo the eliminating polynomial. So modulo $p$ the standard slice carries exactly $684$ solutions, which is $-\hat c(16)$, the number found numerically in \cite{CM24}.
 
 This is evidence, not a proof. The number of solutions over $\QQ$ and over $\mathbb F_p$ agree for all but finitely many primes, but we cannot certify that $p$ is not one of the exceptions, and we have not examined the configurations outside the standard slice, where $r_1,r_2,r_3,r_1\Phi^{(4)}_2$ are dependent.
 
 \subsection{Nondegeneracy and nearby parameters}\label{ssec:nondeg}
-\begin{proof}[Proof of Theorem~\ref{thm:B}(ii) and (iii)]
-For $N=2,3$ the slice ideal at $c_0$ is radical and zero-dimensional, so each of its points is a reduced isolated point of the scheme $\Sigma_N\cap\{d\cW=0\}$, which by Lemma~\ref{lem:slice} is $\Crit(f_{c_0})$ near that point. An isolated point of the zero scheme of the differential $df$ is reduced exactly when the Hessian of $f$ there is nondegenerate, so every vacuum is a nondegenerate critical point. This is (ii).
+\begin{proof}[Proof of Theorem~\ref{thm:B}(ii)--(iv)]
+For $N=2$ the slice ideal at $c_0$ is radical and zero-dimensional, and for $N=3$ the Jacobian matrix has full rank at each of the $208$ solutions (Section~\ref{ssec:N3}). In both cases each of these points is a reduced isolated point of the scheme $\Sigma_N\cap\{d\cW=0\}$, which by Lemma~\ref{lem:slice} is $\Crit(f_{c_0})$ near that point. An isolated point of the zero scheme of the differential $df$ is reduced exactly when the Hessian of $f$ there is nondegenerate, so each of these vacua is a nondegenerate critical point. This gives (ii) and the nondegeneracy in (iii).
 
-For (iii), the critical points of $f_c$ depend algebraically on $c$, and by the implicit function theorem each nondegenerate critical point of $f_{c_0}$ continues to a unique nondegenerate critical point of $f_c$ for $c$ close to $c_0$; the continuations of distinct points remain distinct. For the Zariski statement, let $X=\{(c,p):p\in\Sigma_N,\ d\cW_c(p)=0\}$ and let $Y_1,\dots,Y_s$ be the irreducible components of $X$ that contain the points over $c_0$. Near each such point $X$ is the graph of a holomorphic map from a neighbourhood of $c_0$, so each $Y_j$ has dimension $6$ and maps dominantly and generically finitely, of some degree $d_j$, onto the parameter space. There is a nonempty Zariski-open set $U$ over which each $Y_j$ has exactly $d_j$ points and the $Y_j$ do not meet. Since $U$ meets every neighbourhood of $c_0$, where the fibres contain the $n_N$ continuations, $\sum_jd_j\ge n_N$, and every fibre over $U$ contains at least $n_N$ points of the slice. They are vacua by Lemma~\ref{lem:slice} as long as all $c^{(k\ell)}\ne0$.
+For (iv), the critical points of $f_c$ depend algebraically on $c$, and by the implicit function theorem each nondegenerate critical point of $f_{c_0}$ continues to a unique nondegenerate critical point of $f_c$ for $c$ close to $c_0$; the continuations of distinct points remain distinct. For the Zariski statement, let $X=\{(c,p):p\in\Sigma_N,\ d\cW_c(p)=0\}$ and let $Y_1,\dots,Y_s$ be the irreducible components of $X$ that contain the points over $c_0$. Near each such point $X$ is the graph of a holomorphic map from a neighbourhood of $c_0$, so each $Y_j$ has dimension $6$ and maps dominantly and generically finitely, of some degree $d_j$, onto the parameter space. There is a nonempty Zariski-open set $U$ over which each $Y_j$ has exactly $d_j$ points and the $Y_j$ do not meet. Since $U$ meets every neighbourhood of $c_0$, where the fibres contain the $n_N$ continuations, $\sum_jd_j\ge n_N$, and every fibre over $U$ contains at least $n_N$ points of the slice. They are vacua by Lemma~\ref{lem:slice} as long as all $c^{(k\ell)}\ne0$.
 \end{proof}
 
 \begin{table}[t]
@@ -336,7 +353,7 @@ $-19/28$ & $-9/4$ & $5/3$ & $21/13$ & $-1/4$ & $-29/27$\\
 \begin{figure}[t]
 \centering
 \includegraphics[width=0.98\textwidth]{figures/fig_N3.png}
-\caption{The $208$ vacua of the $N=3$ system at $c=c_0$, drawn as in Figure~\ref{fig:N2} (both axes on a scale that is linear near $0$ and logarithmic beyond $1$). All $104$ pairs $\{p,\sigma p\}$ are visible as segments through the origin, and the $208$ critical values are distinct.}
+\caption{The $208$ vacua of the $N=3$ system at $c=c_0$ found in Section~\ref{ssec:N3}, drawn as in Figure~\ref{fig:N2} (both axes on a scale that is linear near $0$ and logarithmic beyond $1$). All $104$ pairs $\{p,\sigma p\}$ are visible as segments through the origin, and the $208$ critical values are distinct.}
 \label{fig:N3}
 \end{figure}
 
@@ -345,15 +362,15 @@ $-19/28$ & $-9/4$ & $5/3$ & $21/13$ & $-1/4$ & $-29/27$\\
 \subsection{What is proved and what is not}
 Theorem~\ref{thm:A} holds for every $N$ and every choice of parameters with $c^{(k\ell)}\ne0$. It reduces the conjecture to the statement that the regular function $f_c$ on the smooth variety $\cR^{\rm s}/\PG$ of dimension $2N^2+6N+13$ has exactly $-\hat c(4N)$ critical points modulo the $6$-dimensional group of shifts, for generic $c$, and it shows that the count is even whenever it is finite.
 
-Theorem~\ref{thm:B} gives the count for $N=1$ at generic parameters and for $N=2,3$ at the explicit parameters $c_0$, together with a lower bound at generic parameters. The upper bound at generic parameters for $N=2,3$ is not proved. The reason is that we cannot show that $\Crit(f_c)$ is proper over the parameter space, that is, that no critical point escapes to infinity as $c$ approaches $c_0$. The usual argument would rescale $x=t\,y$ with $t\to\infty$: an escaping family of critical points of $\cW_c$ would approach a nonzero critical point of the cubic part of $\cW$, and one would like to show that there is none. But the cubic part does have nonzero critical points, for instance $Z^{(k\ell)}=0$ for all $k,\ell$ with commuting $\Phi^{(4)}_1,\Phi^{(4)}_2,\Phi^{(4)}_3$, so this argument does not apply. A proof of the generic upper bound would need either a Gröbner basis over the field of rational functions in the parameters, which is out of reach of present software for $N\ge2$, or a compactness argument that excludes vacua coming in from infinity.
+Theorem~\ref{thm:B} gives the count for $N=1$ at generic parameters and for $N=2$ at the explicit parameters $c_0$, the $208$ predicted vacua for $N=3$ at $c_0$, and lower bounds at generic parameters. Two upper bounds are not proved: for $N=3$ at $c_0$, where Proposition~\ref{prop:integral} reduces the question to solutions with large primes in their denominators and an exact Gröbner basis over $\QQ$ would settle it, and for $N=2,3$ at generic parameters. The reason is that we cannot show that $\Crit(f_c)$ is proper over the parameter space, that is, that no critical point escapes to infinity as $c$ approaches $c_0$. The usual argument would rescale $x=t\,y$ with $t\to\infty$: an escaping family of critical points of $\cW_c$ would approach a nonzero critical point of the cubic part of $\cW$, and one would like to show that there is none. But the cubic part does have nonzero critical points, for instance $Z^{(k\ell)}=0$ for all $k,\ell$ with commuting $\Phi^{(4)}_1,\Phi^{(4)}_2,\Phi^{(4)}_3$, so this argument does not apply. A proof of the generic upper bound would need either a Gröbner basis over the field of rational functions in the parameters, which is out of reach of present software for $N\ge2$, or a compactness argument that excludes vacua coming in from infinity.
 
 \subsection{Larger \texorpdfstring{$N$}{N}}
-The slice equations grow quickly with $N$: the slice has $3N^2+6N+15-(N^2+8)=2N^2+6N+7$ variables, so $27$, $43$, $63$ for $N=2,3,4$. The predicted number of solutions grows like $e^{2\pi\sqrt N}$ up to a power of $N$, the exponential of the entropy $\pi\sqrt{4N}$ of the corresponding black hole (Figure~\ref{fig:counts}).
+The slice equations grow quickly with $N$: the slice has $3N^2+6N+15-(N^2+8)=2N^2+6N+7$ variables, so $27$, $43$, $63$ for $N=2,3,4$. The predicted number of solutions grows like $e^{2\pi\sqrt N}$ up to a power of $N$, the exponential of the entropy $\pi\sqrt{4N}$ of the corresponding black hole (Figure~\ref{fig:counts}). The numerical counts $684$, $2032$, $5616$ of \cite{CM24,CM26} for $N=4,5,6$ match the prediction. By Theorem~\ref{thm:A} each of their solutions of the $F$-term equations is a simple representation and carries exactly one solution of the $D$-term equations, so what remains to be proved for these $N$ is the count of critical points alone.
 
 \begin{figure}[t]
 \centering
 \includegraphics[width=0.8\textwidth]{figures/fig_counts.png}
-\caption{The predicted number $-\hat c(4N)$ of vacua and the counts of this paper. For $N=4$ the count is modulo a prime and is not a proof.}
+\caption{The predicted number $-\hat c(4N)$ of vacua and the counts of this paper. For $N=3$ the $208$ vacua are certified but it is not proved that there are no others; for $N=4$ the count is modulo a prime and is not a proof.}
 \label{fig:counts}
 \end{figure}
 
@@ -412,10 +429,12 @@ The archived programs \cite{Bha26} do the following.
 \begin{enumerate}
 \item Build $\cW$ symbolically, differentiate it, and impose the slice of Definition~\ref{def:slices} or an exceptional chart, at $c_0$ of Table~\ref{tab:c0}.
 \item Eliminate linearly occurring variables and clear denominators.
-\item Compute $\dim_\QQ\QQ[x]/I$ and the reduced Gröbner bases of the exceptional charts with the standard basis algorithm of Singular over $\QQ$, in exact arithmetic (not with modular methods, whose final test in Singular checks only that the input lies in the ideal of the result).
+\item For $N\le2$, compute $\dim_\QQ\QQ[x]/I$ and the reduced Gröbner bases of the exceptional charts with the standard basis algorithm of Singular over $\QQ$, in exact arithmetic (not with modular methods, whose final test in Singular checks only that the input lies in the ideal of the result).
 \item Compute rational univariate representations with msolve over $\QQ$.
 \item Check each representation independently: parse $\chi$ and the $\rho_i$, verify that $\gcd(\chi,\chi')=1$, and reduce every equation at $x_i=\rho_i(t)$ modulo $\chi$ with exact rational arithmetic in FLINT.
-\item For $N=4$, do the same modulo $p=2^{30}+3$ with arithmetic in $\mathbb F_p[t]$; this part is not a proof.
+\item Check that every solution of a representation is nonsingular, by the determinant test of Section~\ref{ssec:N3} modulo $2^{61}-1$ (for $N=1,2,3$), and repeat the test modulo $10^9+7$ and $2^{30}+3$ for $N=3$, as used in Proposition~\ref{prop:integral}.
+\item For $N=3$, compute modulo $65521$, $10^9+7$ and $2^{30}+3$ the Gröbner bases of the reduced slice system and of the twelve exceptional charts with msolve.
+\item For $N=4$, check the representation modulo $p=2^{30}+3$ with arithmetic in $\mathbb F_p[t]$; this part is not a proof.
 \end{enumerate}
 The certificate files are part of the archive. Floating point numbers appear only in the figures, which locate the roots of $\chi$ with certified complex root isolation and evaluate the coordinates.
 
@@ -437,7 +456,7 @@ The certificate files are part of the archive. Floating point numbers appear onl
 
 \bibitem{Bha22} D.~Bhattacharjee, \emph{Generalization of quartic and quintic Calabi--Yau manifolds fibered by polarized K3 surfaces}, Research Square (2022). doi:10.21203/rs.3.rs-1965255/v1
 
-\bibitem{Bha26} D.~Bhattacharjee, \emph{Code and certificates for: Black hole microstates of two and three D6-branes carry no angular momentum}, Zenodo (2026). doi:\zenodoDOI
+\bibitem{Bha26} D.~Bhattacharjee, \emph{Code and certificates for: Black hole microstates of two D6-branes carry no angular momentum}, Zenodo (2026). doi:\zenodoDOI
 
 \bibitem{BN26} D.~Bhattacharjee, P.~Nandi, \emph{Enriques and Kummer surfaces arising from K3 involutions}, Preprints (2026). doi:10.20944/preprints202602.0098.v1
 
@@ -446,6 +465,10 @@ The certificate files are part of the archive. Floating point numbers appear onl
 \bibitem{CGMS14} A.~Chowdhury, R.~S.~Garavuso, S.~Mondal, A.~Sen, \emph{BPS state counting in $\mathcal N=8$ supersymmetric string theory for pure D-brane configurations}, J. High Energy Phys. \textbf{2014}, no.~10 (2014), 186. doi:10.1007/JHEP10(2014)186
 
 \bibitem{CGMS16} A.~Chowdhury, R.~S.~Garavuso, S.~Mondal, A.~Sen, \emph{Do all BPS black hole microstates carry zero angular momentum?}, J. High Energy Phys. \textbf{2016}, no.~4 (2016), 082. doi:10.1007/JHEP04(2016)082
+
+\bibitem{CM24} A.~Chowdhury, S.~Maji, \emph{Counting $\mathcal N=8$ black holes as algebraic varieties}, J. High Energy Phys. \textbf{2024}, no.~5 (2024), 091. doi:10.1007/JHEP05(2024)091
+
+\bibitem{CM26} A.~Chowdhury, S.~Maji, \emph{Pure D-brane black holes: BPS counting and non-BPS vacua}, J. High Energy Phys. \textbf{2026}, no.~8 (2026), 070. doi:10.1007/JHEP08(2026)070
 
 \bibitem{CLO15} D.~A.~Cox, J.~Little, D.~O'Shea, \emph{Ideals, Varieties, and Algorithms}, 4th ed., Undergraduate Texts in Mathematics, Springer, Cham, 2015. doi:10.1007/978-3-319-16721-3
 
